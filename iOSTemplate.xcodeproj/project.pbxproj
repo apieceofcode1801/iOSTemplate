@@ -154,6 +154,9 @@
 		CEA55FB026E3550300B04CC1 = {
 			isa = PBXGroup;
 			children = (
+				CEA1EC7A26E66AD0004EDA5B /* Sources */,
+				CEA1EC7526E6696F004EDA5B /* Package.swift */,
+				CEA1EC7126E6696F004EDA5B /* README.md */,
 				CEA55FBB26E3550300B04CC1 /* iOSTemplate */,
 				CEA55FD226E3550400B04CC1 /* iOSTemplateTests */,
 				CEA55FDD26E3550400B04CC1 /* iOSTemplateUITests */,
@@ -176,9 +179,6 @@
 		CEA55FBB26E3550300B04CC1 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				CEA1EC7A26E66AD0004EDA5B /* Sources */,
-				CEA1EC7526E6696F004EDA5B /* Package.swift */,
-				CEA1EC7126E6696F004EDA5B /* README.md */,
 				CEA1EC7026E668D3004EDA5B /* Base */,
 				CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */,
 				CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */,
