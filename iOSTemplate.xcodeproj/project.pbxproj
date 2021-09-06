@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		CEA1EC6D26E66814004EDA5B /* NetworkEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FED26E35A8600B04CC1 /* NetworkEnums.swift */; };
 		CEA1EC6E26E66817004EDA5B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF126E3646100B04CC1 /* Network.swift */; };
 		CEA1EC6F26E6681A004EDA5B /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF326E3655C00B04CC1 /* NetworkConfig.swift */; };
+		CEA1EC7626E66970004EDA5B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEA1EC7126E6696F004EDA5B /* README.md */; };
+		CEA1EC7C26E66AE2004EDA5B /* iOSTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1EC7B26E66AE2004EDA5B /* iOSTemplate.framework */; platformFilter = ios; };
+		CEA1EC7D26E66CA2004EDA5B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1EC7526E6696F004EDA5B /* Package.swift */; };
 		CEA55FBD26E3550300B04CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */; };
 		CEA55FBF26E3550300B04CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */; };
 		CEA55FC126E3550300B04CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FC026E3550300B04CC1 /* ViewController.swift */; };
@@ -66,6 +69,9 @@
 		CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA1EC6126E66802004EDA5B /* iOSTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSTemplate.h; sourceTree = "<group>"; };
 		CEA1EC6226E66802004EDA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA1EC7126E6696F004EDA5B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEA1EC7526E6696F004EDA5B /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		CEA1EC7B26E66AE2004EDA5B /* iOSTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iOSTemplate.framework; sourceTree = "<group>"; };
 		CEA55FB926E3550300B04CC1 /* iOSTemplateSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplateSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1EC7C26E66AE2004EDA5B /* iOSTemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +135,22 @@
 			path = iOSTemplate;
 			sourceTree = "<group>";
 		};
+		CEA1EC7026E668D3004EDA5B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CEA55FEC26E35A4D00B04CC1 /* Network */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CEA1EC7A26E66AD0004EDA5B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1EC7B26E66AE2004EDA5B /* iOSTemplate.framework */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		CEA55FB026E3550300B04CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +176,10 @@
 		CEA55FBB26E3550300B04CC1 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				CEA55FEC26E35A4D00B04CC1 /* Network */,
+				CEA1EC7A26E66AD0004EDA5B /* Sources */,
+				CEA1EC7526E6696F004EDA5B /* Package.swift */,
+				CEA1EC7126E6696F004EDA5B /* README.md */,
+				CEA1EC7026E668D3004EDA5B /* Base */,
 				CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */,
 				CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */,
 				CEA55FC026E3550300B04CC1 /* ViewController.swift */,
@@ -332,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1EC7626E66970004EDA5B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1EC7D26E66CA2004EDA5B /* Package.swift in Sources */,
 				CEA55FC126E3550300B04CC1 /* ViewController.swift in Sources */,
 				CEA55FBD26E3550300B04CC1 /* AppDelegate.swift in Sources */,
 				CEA55FBF26E3550300B04CC1 /* SceneDelegate.swift in Sources */,
@@ -450,6 +478,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOSTemplate/Base/Sources",
+				);
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,6 +512,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOSTemplate/Base/Sources",
+				);
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
