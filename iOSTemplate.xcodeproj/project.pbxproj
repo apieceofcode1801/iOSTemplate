@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA1EC6326E66802004EDA5B /* iOSTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA1EC6126E66802004EDA5B /* iOSTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA1EC6626E66802004EDA5B /* iOSTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */; };
+		CEA1EC6726E66802004EDA5B /* iOSTemplate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA1EC6C26E66811004EDA5B /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FEF26E3638300B04CC1 /* NetworkRequest.swift */; };
+		CEA1EC6D26E66814004EDA5B /* NetworkEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FED26E35A8600B04CC1 /* NetworkEnums.swift */; };
+		CEA1EC6E26E66817004EDA5B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF126E3646100B04CC1 /* Network.swift */; };
+		CEA1EC6F26E6681A004EDA5B /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF326E3655C00B04CC1 /* NetworkConfig.swift */; };
 		CEA55FBD26E3550300B04CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */; };
 		CEA55FBF26E3550300B04CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */; };
 		CEA55FC126E3550300B04CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FC026E3550300B04CC1 /* ViewController.swift */; };
@@ -15,13 +22,16 @@
 		CEA55FC926E3550400B04CC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA55FC726E3550400B04CC1 /* LaunchScreen.storyboard */; };
 		CEA55FD426E3550400B04CC1 /* iOSTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FD326E3550400B04CC1 /* iOSTemplateTests.swift */; };
 		CEA55FDF26E3550400B04CC1 /* iOSTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FDE26E3550400B04CC1 /* iOSTemplateUITests.swift */; };
-		CEA55FEE26E35A8600B04CC1 /* NetworkEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FED26E35A8600B04CC1 /* NetworkEnums.swift */; };
-		CEA55FF026E3638300B04CC1 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FEF26E3638300B04CC1 /* NetworkRequest.swift */; };
-		CEA55FF226E3646100B04CC1 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF126E3646100B04CC1 /* Network.swift */; };
-		CEA55FF426E3655C00B04CC1 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA55FF326E3655C00B04CC1 /* NetworkConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CEA1EC6426E66802004EDA5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEA55FB126E3550300B04CC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEA1EC5E26E66802004EDA5B;
+			remoteInfo = iOSTemplate;
+		};
 		CEA55FD026E3550400B04CC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEA55FB126E3550300B04CC1 /* Project object */;
@@ -38,8 +48,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA1EC6B26E66802004EDA5B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA1EC6726E66802004EDA5B /* iOSTemplate.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		CEA55FB926E3550300B04CC1 /* iOSTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA1EC6126E66802004EDA5B /* iOSTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSTemplate.h; sourceTree = "<group>"; };
+		CEA1EC6226E66802004EDA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA55FB926E3550300B04CC1 /* iOSTemplateSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplateSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA55FBC26E3550300B04CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA55FBE26E3550300B04CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEA55FC026E3550300B04CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +87,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CEA1EC5C26E66802004EDA5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA55FB626E3550300B04CC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1EC6626E66802004EDA5B /* iOSTemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +119,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA1EC6026E66802004EDA5B /* iOSTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1EC6126E66802004EDA5B /* iOSTemplate.h */,
+				CEA1EC6226E66802004EDA5B /* Info.plist */,
+			);
+			path = iOSTemplate;
+			sourceTree = "<group>";
+		};
 		CEA55FB026E3550300B04CC1 = {
 			isa = PBXGroup;
 			children = (
 				CEA55FBB26E3550300B04CC1 /* iOSTemplate */,
 				CEA55FD226E3550400B04CC1 /* iOSTemplateTests */,
 				CEA55FDD26E3550400B04CC1 /* iOSTemplateUITests */,
+				CEA1EC6026E66802004EDA5B /* iOSTemplate */,
 				CEA55FBA26E3550300B04CC1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,9 +142,10 @@
 		CEA55FBA26E3550300B04CC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEA55FB926E3550300B04CC1 /* iOSTemplate.app */,
+				CEA55FB926E3550300B04CC1 /* iOSTemplateSample.app */,
 				CEA55FCF26E3550400B04CC1 /* iOSTemplateTests.xctest */,
 				CEA55FDA26E3550400B04CC1 /* iOSTemplateUITests.xctest */,
+				CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,14 +196,26 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CEA1EC5A26E66802004EDA5B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA1EC6326E66802004EDA5B /* iOSTemplate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		CEA55FB826E3550300B04CC1 /* iOSTemplate */ = {
+		CEA1EC5E26E66802004EDA5B /* iOSTemplate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEA55FE326E3550400B04CC1 /* Build configuration list for PBXNativeTarget "iOSTemplate" */;
+			buildConfigurationList = CEA1EC6826E66802004EDA5B /* Build configuration list for PBXNativeTarget "iOSTemplate" */;
 			buildPhases = (
-				CEA55FB526E3550300B04CC1 /* Sources */,
-				CEA55FB626E3550300B04CC1 /* Frameworks */,
-				CEA55FB726E3550300B04CC1 /* Resources */,
+				CEA1EC5A26E66802004EDA5B /* Headers */,
+				CEA1EC5B26E66802004EDA5B /* Sources */,
+				CEA1EC5C26E66802004EDA5B /* Frameworks */,
+				CEA1EC5D26E66802004EDA5B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -165,7 +223,26 @@
 			);
 			name = iOSTemplate;
 			productName = iOSTemplate;
-			productReference = CEA55FB926E3550300B04CC1 /* iOSTemplate.app */;
+			productReference = CEA1EC5F26E66802004EDA5B /* iOSTemplate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEA55FB826E3550300B04CC1 /* iOSTemplateSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA55FE326E3550400B04CC1 /* Build configuration list for PBXNativeTarget "iOSTemplateSample" */;
+			buildPhases = (
+				CEA55FB526E3550300B04CC1 /* Sources */,
+				CEA55FB626E3550300B04CC1 /* Frameworks */,
+				CEA55FB726E3550300B04CC1 /* Resources */,
+				CEA1EC6B26E66802004EDA5B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEA1EC6526E66802004EDA5B /* PBXTargetDependency */,
+			);
+			name = iOSTemplateSample;
+			productName = iOSTemplate;
+			productReference = CEA55FB926E3550300B04CC1 /* iOSTemplateSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CEA55FCE26E3550400B04CC1 /* iOSTemplateTests */ = {
@@ -213,6 +290,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					CEA1EC5E26E66802004EDA5B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					CEA55FB826E3550300B04CC1 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -239,14 +319,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEA55FB826E3550300B04CC1 /* iOSTemplate */,
+				CEA55FB826E3550300B04CC1 /* iOSTemplateSample */,
 				CEA55FCE26E3550400B04CC1 /* iOSTemplateTests */,
 				CEA55FD926E3550400B04CC1 /* iOSTemplateUITests */,
+				CEA1EC5E26E66802004EDA5B /* iOSTemplate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CEA1EC5D26E66802004EDA5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA55FB726E3550300B04CC1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,17 +362,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CEA1EC5B26E66802004EDA5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA1EC6C26E66811004EDA5B /* NetworkRequest.swift in Sources */,
+				CEA1EC6D26E66814004EDA5B /* NetworkEnums.swift in Sources */,
+				CEA1EC6F26E6681A004EDA5B /* NetworkConfig.swift in Sources */,
+				CEA1EC6E26E66817004EDA5B /* Network.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEA55FB526E3550300B04CC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA55FF426E3655C00B04CC1 /* NetworkConfig.swift in Sources */,
 				CEA55FC126E3550300B04CC1 /* ViewController.swift in Sources */,
-				CEA55FEE26E35A8600B04CC1 /* NetworkEnums.swift in Sources */,
-				CEA55FF226E3646100B04CC1 /* Network.swift in Sources */,
 				CEA55FBD26E3550300B04CC1 /* AppDelegate.swift in Sources */,
 				CEA55FBF26E3550300B04CC1 /* SceneDelegate.swift in Sources */,
-				CEA55FF026E3638300B04CC1 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +402,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CEA1EC6526E66802004EDA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEA1EC5E26E66802004EDA5B /* iOSTemplate */;
+			targetProxy = CEA1EC6426E66802004EDA5B /* PBXContainerItemProxy */;
+		};
 		CEA55FD126E3550400B04CC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEA55FB826E3550300B04CC1 /* iOSTemplate */;
+			target = CEA55FB826E3550300B04CC1 /* iOSTemplateSample */;
 			targetProxy = CEA55FD026E3550400B04CC1 /* PBXContainerItemProxy */;
 		};
 		CEA55FDC26E3550400B04CC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CEA55FB826E3550300B04CC1 /* iOSTemplate */;
+			target = CEA55FB826E3550300B04CC1 /* iOSTemplateSample */;
 			targetProxy = CEA55FDB26E3550400B04CC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -339,6 +439,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CEA1EC6926E66802004EDA5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = iOSTemplate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apieceofcode.iOSTemplate;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CEA1EC6A26E66802004EDA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = iOSTemplate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apieceofcode.iOSTemplate;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CEA55FE126E3550400B04CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -458,6 +618,7 @@
 		CEA55FE426E3550400B04CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -479,6 +640,7 @@
 		CEA55FE526E3550400B04CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -580,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CEA1EC6826E66802004EDA5B /* Build configuration list for PBXNativeTarget "iOSTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA1EC6926E66802004EDA5B /* Debug */,
+				CEA1EC6A26E66802004EDA5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CEA55FB426E3550300B04CC1 /* Build configuration list for PBXProject "iOSTemplate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -589,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEA55FE326E3550400B04CC1 /* Build configuration list for PBXNativeTarget "iOSTemplate" */ = {
+		CEA55FE326E3550400B04CC1 /* Build configuration list for PBXNativeTarget "iOSTemplateSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEA55FE426E3550400B04CC1 /* Debug */,
