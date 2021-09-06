@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol NetworkConfig {
+public protocol NetworkConfig {
     var host: String { get }
     var scheme: URLScheme { get }
     var keyDecoding: KeyDecoding { get }
 }
 
-extension NetworkConfig {
+public extension NetworkConfig {
     var keyDecoding: KeyDecoding {
         return .default
     }

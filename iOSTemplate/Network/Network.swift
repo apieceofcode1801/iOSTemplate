@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol NetworkDownloadDelegate: AnyObject {
+public protocol NetworkDownloadDelegate: AnyObject {
     func onDownloading(_ progress: Float)
     func onFinishedDownloading(to tempLocation: URL)
     func onDownloadFailed(error: NetworkError, resumeData: Data?)
 }
 
-protocol NetworkBackgroundDownloadDelegate: AnyObject {
+public protocol NetworkBackgroundDownloadDelegate: AnyObject {
     func onFailed(error: NetworkError)
     func onSuccess(tempLocation: URL)
 }
 
-protocol NetworkUploadDelegate: AnyObject {
+public protocol NetworkUploadDelegate: AnyObject {
     func didUpload(_ result: Bool)
 }
 
-class Network: NSObject {
-    static var shared = Network()
+public class Network: NSObject {
+    public static var shared = Network()
     
     private lazy var session: URLSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
     
@@ -58,11 +58,11 @@ class Network: NSObject {
     private var canWrite = false
     private var downloadTask: URLSessionDownloadTask? = nil
     
-    weak var uploadDelegate: NetworkUploadDelegate?
-    weak var downloadDelegate: NetworkDownloadDelegate?
-    weak var backgroundDownloadDelegate: NetworkBackgroundDownloadDelegate?
+    public weak var uploadDelegate: NetworkUploadDelegate?
+    public weak var downloadDelegate: NetworkDownloadDelegate?
+    public weak var backgroundDownloadDelegate: NetworkBackgroundDownloadDelegate?
     
-    var backgroundCompletionHandler: (() -> Void)?
+    public var backgroundCompletionHandler: (() -> Void)?
     
     private func performDataTaskWithRequest<T: Decodable>(_ request: URLRequest, keyDecoding: KeyDecoding, completion: @escaping (Result<T, NetworkError>) -> Void) {
         let task = session.dataTask(with: request) { data, response, error in
@@ -97,7 +97,7 @@ class Network: NSObject {
 
 // MARK: Handle fetching data
 extension Network {
-    func fetch<T>(with networkRequest: NetworkRequest, completion: @escaping (Result<T, NetworkError>) -> Void) where T: Decodable {
+    public func fetch<T>(with networkRequest: NetworkRequest, completion: @escaping (Result<T, NetworkError>) -> Void) where T: Decodable {
         
         guard let url = url(with: networkRequest) else {
             completion(.failure(.unkownError(description: "URL invalid")))
@@ -117,7 +117,7 @@ extension Network {
 
 // MARK: Handle uploading data
 extension Network {
-    func upload<T: Decodable>(networkRequest: NetworkUploadRequest, timeout: TimeInterval, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    public func upload<T: Decodable>(networkRequest: NetworkUploadRequest, timeout: TimeInterval, completion: @escaping (Result<T, NetworkError>) -> Void) {
         guard let url = url(with: networkRequest) else {
             completion(.failure(.unkownError(description: "URL invalid")))
             return
@@ -140,7 +140,7 @@ extension Network {
         }
     }
     
-    func multipartUpload<T: Decodable>(multipartRequest: NetworkMultipartRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    public func multipartUpload<T: Decodable>(multipartRequest: NetworkMultipartRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
         guard let url = url(with: multipartRequest) else {
             completion(.failure(.unkownError(description: "URL invalid")))
             return
@@ -158,7 +158,7 @@ extension Network {
 
 // MARK: Handle downloading task
 extension Network {
-    func download(networkRequest: NetworkRequest) {
+    public func download(networkRequest: NetworkRequest) {
         guard let url = url(with: networkRequest) else {
             downloadDelegate?.onDownloadFailed(error: .unkownError(description: "URL invalid"), resumeData: nil)
             return
@@ -168,12 +168,12 @@ extension Network {
         downloadTask?.resume()
     }
     
-    func resumeDownload(_ resumeData: Data) {
+    public func resumeDownload(_ resumeData: Data) {
         downloadTask = session.downloadTask(withResumeData: resumeData)
         downloadTask?.resume()
     }
     
-    func backgroundDownload(networkRequest: NetworkRequest) {
+    public func backgroundDownload(networkRequest: NetworkRequest) {
         guard let url = url(with: networkRequest) else {
             backgroundDownloadDelegate?.onFailed(error: .unkownError(description: "URL invalid"))
             return
@@ -188,7 +188,7 @@ extension Network {
 }
 
 extension Network {
-    func url(with networkRequest: NetworkRequest) -> URL? {
+    private func url(with networkRequest: NetworkRequest) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = networkRequest.config.scheme.value
         urlComponents.host = networkRequest.config.host
@@ -202,11 +202,11 @@ extension Network {
 }
 
 extension Network: URLSessionTaskDelegate {
-    func urlSession(_ session: URLSession, task: URLSessionTask, needNewBodyStream completionHandler: @escaping (InputStream?) -> Void) {
+    public func urlSession(_ session: URLSession, task: URLSessionTask, needNewBodyStream completionHandler: @escaping (InputStream?) -> Void) {
         completionHandler(boundStreams.input)
     }
     
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+    public func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         guard let completionHandler = backgroundCompletionHandler else {
             return
         }
@@ -216,7 +216,7 @@ extension Network: URLSessionTaskDelegate {
 }
 
 extension Network: URLSessionDownloadDelegate {
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         if let error = downloadTask.error {
             downloadDelegate?.onDownloadFailed(error: .unkownError(description: error.localizedDescription), resumeData: nil)
         }
@@ -234,7 +234,7 @@ extension Network: URLSessionDownloadDelegate {
         downloadDelegate?.onFinishedDownloading(to: location)
     }
     
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         if downloadTask == self.downloadTask {
             let calculatedProgress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
             DispatchQueue.main.async {
@@ -243,7 +243,7 @@ extension Network: URLSessionDownloadDelegate {
         }
     }
     
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if task == downloadTask, let error = error {
             let userInfo = (error as NSError).userInfo
             let resumeData = userInfo[NSURLSessionDownloadTaskResumeData] as? Data
@@ -253,7 +253,7 @@ extension Network: URLSessionDownloadDelegate {
 }
 
 extension Network: StreamDelegate {
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+    public func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         guard aStream == boundStreams.output else {
             return
         }

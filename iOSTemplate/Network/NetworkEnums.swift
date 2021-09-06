@@ -7,20 +7,20 @@
 
 import Foundation
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case unkownError(description: String)
     case serverError(code: Int, message: String)
     case decodeError
 }
 
-enum HttpMethod: String {
+public enum HttpMethod: String {
     case POST
     case GET
     case PUT
     case DELETE
 }
 
-enum URLScheme {
+public enum URLScheme {
     case http
     case https
     
@@ -34,7 +34,7 @@ enum URLScheme {
     }
 }
 
-enum KeyDecoding {
+public enum KeyDecoding {
     case snake
     case `default`
     

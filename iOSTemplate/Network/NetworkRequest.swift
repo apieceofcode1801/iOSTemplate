@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NetworkRequest {
+public protocol NetworkRequest {
     var path: String { get }
     var method: HttpMethod { get }
     var queries: [String: String]? { get }
@@ -16,29 +16,29 @@ protocol NetworkRequest {
     var config: NetworkConfig { get }
 }
 
-extension NetworkRequest {
+public extension NetworkRequest {
     var body: [String: Any]? { return nil }
     
     var queries: [String: String]? {return nil }
 }
 
-protocol NetworkUploadRequest: NetworkRequest {
+public protocol NetworkUploadRequest: NetworkRequest {
     var data: Data { get }
 }
 
-extension NetworkUploadRequest {
+public extension NetworkUploadRequest {
     var method: HttpMethod {
         return .POST
     }
 }
 
-protocol NetworkMultipartRequest: NetworkRequest {
+public protocol NetworkMultipartRequest: NetworkRequest {
     var boundary: String { get }
     var textFields: [MultipartTextField] { get }
     var dataField: MultipartDataField { get }
 }
 
-extension NetworkMultipartRequest {
+public extension NetworkMultipartRequest {
     var method: HttpMethod {
         return .POST
     }
@@ -62,7 +62,7 @@ extension NetworkMultipartRequest {
     }
 }
 
-struct MultipartTextField {
+public struct MultipartTextField {
     let name: String
     let value: String
     
@@ -78,7 +78,7 @@ struct MultipartTextField {
     }
 }
 
-struct MultipartDataField {
+public struct MultipartDataField {
     let name: String
     let data: Data
     let mimeType: String
